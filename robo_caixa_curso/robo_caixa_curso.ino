@@ -80,7 +80,7 @@ void setup()
   pinMode(IN2, OUTPUT);
   pinMode(IN3, OUTPUT);
   pinMode(IN4, OUTPUT);
-  pinMode(4, OUTPUT) // pino do rele da arma
+  pinMode(4, OUTPUT); // pino do rele da arma
 
   //Define pinos para o rele da arma como saida
   pinMode(rele, OUTPUT); 
