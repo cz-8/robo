@@ -80,6 +80,7 @@ void setup()
   pinMode(IN2, OUTPUT);
   pinMode(IN3, OUTPUT);
   pinMode(IN4, OUTPUT);
+  pinMode(4, OUTPUT) // pino do rele da arma
 
   //Define pinos para o rele da arma como saida
   pinMode(rele, OUTPUT); 
@@ -280,17 +281,7 @@ void loop() {
     // Botao CIRCULO
     if(ps2x.ButtonPressed(PSB_CIRCLE))               //sera verdadeiro se o botao foi pressionado
     {
-      Serial.println(ligar);
-      if (ligar%2==0)
-      {
-        digitalWrite(rele, HIGH);  //Liga rele 1
-        ligar++;
-      }
-      else
-      {
-        digitalWrite(rele, LOW);  //desliga rele 1
-        ligar++
-      }
+     digitalWrite(4, LOW); // desliga arma
     }
     // Botao X
     if(ps2x.NewButtonState(PSB_CROSS))               //sera verdadeirO se o botao foi pressionado ou solto
@@ -302,7 +293,7 @@ void loop() {
     // Botao QUADRADO 
     if(ps2x.ButtonReleased(PSB_SQUARE))              //sera verdadiro se o botao foi solto (liberado)
     {
-      Serial.println("Square just released");  
+      digitalWrite(4,HIGH);   // liga a arma
     }   
 
  
